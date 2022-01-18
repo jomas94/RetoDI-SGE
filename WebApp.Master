@@ -13,15 +13,22 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    
-        <h1>Web App</h1>
-        <asp:ContentPlaceHolder ID="ContentHeader" runat="server">
+   
+        <asp:ContentPlaceHolder ID="ContentPlaceMainPage" runat="server">
         </asp:ContentPlaceHolder>
 
-        <asp:ContentPlaceHolder ID="ContentPlaceHolderLogin" runat="server">
+    <div class="container menu">
+
+        <asp:ContentPlaceHolder  ID="ContentPlaceMenu" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+
+
+        <asp:ContentPlaceHolder  ID="ContentPlaceHolderLogin" runat="server">
         </asp:ContentPlaceHolder>
 
-      
+      <asp:ContentPlaceHolder ID="ContentPlaceMenuUsuario" runat="server">
+        </asp:ContentPlaceHolder>
 
         <div class="container body-content">
         <asp:ContentPlaceHolder ID="MainContent" runat="server">
@@ -30,7 +37,7 @@
             
             
             
-            <hr />
+        <hr />
         <footer>
             <p>&copy; <%: DateTime.Now.Year %> - WebApp - Desarrollado por Jon, Jomario, M. Arriola, Dani para el ETHAZI de DI-SGE 2EVA</p>
         </footer>

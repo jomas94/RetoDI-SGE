@@ -23,13 +23,22 @@ Partial Public Class WebApp
     Protected WithEvents head As Global.System.Web.UI.WebControls.ContentPlaceHolder
 
     '''<summary>
-    '''Control ContentHeader.
+    '''Control ContentPlaceMainPage.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents ContentHeader As Global.System.Web.UI.WebControls.ContentPlaceHolder
+    Protected WithEvents ContentPlaceMainPage As Global.System.Web.UI.WebControls.ContentPlaceHolder
+
+    '''<summary>
+    '''Control ContentPlaceMenu.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents ContentPlaceMenu As Global.System.Web.UI.WebControls.ContentPlaceHolder
 
     '''<summary>
     '''Control ContentPlaceHolderLogin.
@@ -39,6 +48,15 @@ Partial Public Class WebApp
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents ContentPlaceHolderLogin As Global.System.Web.UI.WebControls.ContentPlaceHolder
+
+    '''<summary>
+    '''Control ContentPlaceMenuUsuario.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents ContentPlaceMenuUsuario As Global.System.Web.UI.WebControls.ContentPlaceHolder
 
     '''<summary>
     '''Control MainContent.
