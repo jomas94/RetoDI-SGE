@@ -11,5 +11,9 @@
 </asp:Content>
 
 <asp:Content ID="titulo" ContentPlaceHolderID="ContentHeader" runat="server">
-    <h1> Estoy en el frmPirncipal.aspx</h1>
+    <asp:Menu ID="Menu1" runat="server">
+        </asp:Menu><form id="form1" runat="server">
+        
+        <h1>Estoy en el frmPirncipal.aspx</h1>
+    </form>
 </asp:Content>
