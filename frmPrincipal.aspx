@@ -7,7 +7,7 @@
 
     
 <asp:Content ID="contenido" ContentPlaceHolderID="ContentPlaceHolderLogin" runat="server" >
-
+    <h1>Estoy en principal</h1>
 </asp:Content>
 
 <asp:Content ID="titulo" ContentPlaceHolderID="ContentHeader" runat="server">

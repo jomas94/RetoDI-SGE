@@ -9,22 +9,14 @@
 
     <form id="form1" runat="server">
         <div>
-            <asp:Label ID="Label1" runat="server" Text="LOGIN"></asp:Label>
-            <br />
-            <br />
-            <asp:Label ID="Label2" runat="server" Text="User:"></asp:Label>
-    
-            <asp:TextBox ID="txtUser" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            <asp:Label ID="Label3" runat="server" Text="Password:"></asp:Label>
-   
-            <asp:TextBox ID="txtPass" runat="server"></asp:TextBox>
-            <br />
-            <br />
-
-            <asp:Button runat="server" Text="LOG IN" />
-            </div>
+            <asp:Login ID="Login1" runat="server" BackColor="#FFFBD6" BorderColor="#FFDFAD" BorderPadding="4" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#333333" TextLayout="TextOnTop">
+                <InstructionTextStyle Font-Italic="True" ForeColor="Black" />
+                <LoginButtonStyle BackColor="White" BorderColor="#CC9966" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#990000" />
+                <TextBoxStyle Font-Size="0.8em" />
+                <TitleTextStyle BackColor="#990000" Font-Bold="True" Font-Size="0.9em" ForeColor="White" />
+            </asp:Login>
+        
+        </div>
     </form>
  </asp:Content>
 
