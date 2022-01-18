@@ -70,6 +70,24 @@ Public Class frmLogin
             End If
         End Try
 
+        Dim sql1 As String = "SELECT ClientId FROM Clientes WHERE Nombre = '" & Nombre & "' AND Password = '" & Password & "'"
+
+        Dim cmd1 As OleDbCommand = New OleDbCommand(sql1, _OleDbConnection)
+
+        Try
+            _OleDbConnection.Open()
+            Dim idCliente = cmd1.ExecuteScalar
+
+            idUserLog = idCliente
+
+        Catch ex As Exception
+
+        Finally
+            If Not IsNothing(OleDbConnection) Then
+                OleDbConnection.Close()
+            End If
+        End Try
+
         Dim sql As String = "SELECT * FROM Clientes WHERE Nombre = '" & Nombre & "' AND Password = '" & Password & "'"
 
         Dim cmd As OleDbCommand = New OleDbCommand(sql, _OleDbConnection)
@@ -97,24 +115,6 @@ Public Class frmLogin
         End Try
 
         Return User_Exist
-
-        Dim sql1 As String = "SELECT ClientId FROM Clientes WHERE Nombre = '" & Nombre & "' AND Password = '" & Password & "'"
-
-        Dim cmd1 As OleDbCommand = New OleDbCommand(sql1, _OleDbConnection)
-
-        Try
-            _OleDbConnection.Open()
-            Dim idCliente = cmd1.ExecuteScalar
-
-            idUserLog = idCliente
-
-        Catch ex As Exception
-
-        Finally
-            If Not IsNothing(OleDbConnection) Then
-                OleDbConnection.Close()
-            End If
-        End Try
 
     End Function
 

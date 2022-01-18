@@ -22,7 +22,7 @@ Public Class frmChangePassword
 
         If txtNewPassword.Text.Equals(txtNewPasswordDupe.Text) Then
 
-
+            CambiarPass(txtNewPasswordDupe.Text)
 
         End If
 
@@ -57,13 +57,14 @@ Public Class frmChangePassword
             End If
         End Try
 
-        Dim sql As String = "UPDATE CLientes Set Password = '" & newPassword & "' WHERE ClienteId = '" & id & "'"
+        Dim sql As String = "UPDATE CLientes Set Password = '" & newPassword & "' WHERE ClienteId = " & id
 
         Dim cmd As OleDbCommand = New OleDbCommand(sql, _OleDbConnection)
 
         Try
             _OleDbConnection.Open()
-            ' Dim numRegistrosAfectados = cmd.ExecuteScalar
+            cmd.ExecuteNonQuery()
+
 
         Catch ex As Exception
 
