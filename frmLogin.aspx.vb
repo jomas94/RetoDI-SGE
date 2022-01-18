@@ -19,6 +19,7 @@ Public Class frmLogin
 
     End Sub
 
+    Public idUserLog As Integer = 0
 
     Protected Sub Login1_Authenticate(sender As Object, e As AuthenticateEventArgs) Handles Login1.Authenticate
 
@@ -28,6 +29,8 @@ Public Class frmLogin
             'Response.Redirect("frmPrincipal.aspx")
 
             FormsAuthentication.RedirectFromLoginPage(Login1.UserName, Login1.RememberMeSet)
+
+            HttpContext.Current.Session("UserId") = idUserLog
 
         End If
 
@@ -94,6 +97,24 @@ Public Class frmLogin
         End Try
 
         Return User_Exist
+
+        Dim sql1 As String = "SELECT ClientId FROM Clientes WHERE Nombre = '" & Nombre & "' AND Password = '" & Password & "'"
+
+        Dim cmd1 As OleDbCommand = New OleDbCommand(sql1, _OleDbConnection)
+
+        Try
+            _OleDbConnection.Open()
+            Dim idCliente = cmd1.ExecuteScalar
+
+            idUserLog = idCliente
+
+        Catch ex As Exception
+
+        Finally
+            If Not IsNothing(OleDbConnection) Then
+                OleDbConnection.Close()
+            End If
+        End Try
 
     End Function
 

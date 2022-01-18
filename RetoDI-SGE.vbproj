@@ -142,6 +142,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="frmChangePassword.aspx" />
     <Content Include="frmLogin.aspx" />
     <Content Include="frmPrincipal.aspx" />
     <Content Include="Global.asax" />
@@ -210,12 +211,19 @@
     <Compile Include="Default.aspx.designer.vb">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="frmChangePassword.aspx.designer.vb">
+      <DependentUpon>frmChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmChangePassword.aspx.vb">
+      <DependentUpon>frmChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="frmLogin.aspx.designer.vb">
       <DependentUpon>frmLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.aspx.vb">
       <DependentUpon>frmLogin.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="frmPrincipal.aspx.designer.vb">
       <DependentUpon>frmPrincipal.aspx</DependentUpon>
