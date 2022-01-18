@@ -15,7 +15,7 @@ Public Class frmLogin
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        Me.Master.FindControl("ContentHeader").Visible = True
+        Me.Master.FindControl("ContentPlaceMainPage").Visible = True
 
     End Sub
 
