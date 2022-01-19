@@ -5,6 +5,17 @@
     Inherits="RetoDI_SGE.frmPrincipal" %>
 
 
+<asp:Content ID="cabecera" ContentPlaceHolderID="ContentPlaceHeader" runat="server">
+    <div id="header">
+        <h2> Web App</h2>
+        <div style="width:100px">
+            <asp:Image ImageUrl=".\imagenes\clapperboard.png" runat="server" />
+
+        </div>
+    </div>
+</asp:Content>
+
+
     
 <asp:Content ID="menuPrincipal" ContentPlaceHolderID="ContentPlaceMenu" runat="server">
    <form id="form1" runat="server">

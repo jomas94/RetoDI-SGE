@@ -13,6 +13,8 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    <asp:ContentPlaceHolder ID="ContentPlaceHeader" runat="server">
+        </asp:ContentPlaceHolder>
    
         <asp:ContentPlaceHolder ID="ContentPlaceMainPage" runat="server">
         </asp:ContentPlaceHolder>
