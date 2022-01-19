@@ -19,7 +19,7 @@ Public Class frmLogin
 
     End Sub
 
-    Public idUserLog As Integer = 0
+    Public ID As Integer = 0
 
     Protected Sub Login1_Authenticate(sender As Object, e As AuthenticateEventArgs) Handles Login1.Authenticate
 
@@ -30,7 +30,7 @@ Public Class frmLogin
 
             FormsAuthentication.RedirectFromLoginPage(Login1.UserName, Login1.RememberMeSet)
 
-            HttpContext.Current.Session("UserId") = idUserLog
+            HttpContext.Current.Session("userID") = ID
 
         End If
 
@@ -70,7 +70,7 @@ Public Class frmLogin
             End If
         End Try
 
-        Dim sql1 As String = "SELECT ClientId FROM Clientes WHERE Nombre = '" & Nombre & "' AND Password = '" & Password & "'"
+        Dim sql1 As String = "SELECT ClienteId FROM Clientes WHERE Nombre = '" & Nombre & "' AND Password = '" & Password & "'"
 
         Dim cmd1 As OleDbCommand = New OleDbCommand(sql1, _OleDbConnection)
 
@@ -78,7 +78,7 @@ Public Class frmLogin
             _OleDbConnection.Open()
             Dim idCliente = cmd1.ExecuteScalar
 
-            idUserLog = idCliente
+            ID = idCliente
 
         Catch ex As Exception
 

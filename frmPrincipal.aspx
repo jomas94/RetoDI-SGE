@@ -26,8 +26,8 @@
                 <DynamicMenuStyle BackColor="#FFFBD6" />
                 <DynamicSelectedStyle BackColor="#FFCC66" />
                 <Items>
-                    <asp:MenuItem Text="Peliculas" Value="Peliculas" NavigateUrl="~/frmChangePassword.aspx"></asp:MenuItem>
-                    <asp:MenuItem Text="Cesta de Compra" Value="Cesta de Compra"></asp:MenuItem>
+                    <asp:MenuItem Text="Peliculas" Value="Peliculas" NavigateUrl="~/frmPeliculas.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Cesta de Compra" Value="Cesta de Compra" NavigateUrl="~/frmCesta.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Cambiar Contraseña" Value="Cambiar Contraseña" NavigateUrl="~/frmChangePassword.aspx"></asp:MenuItem>
                 </Items>
                 <StaticHoverStyle BackColor="#990000" ForeColor="White" />
