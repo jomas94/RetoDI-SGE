@@ -5,6 +5,17 @@
     Inherits="RetoDI_SGE.frmPrincipal" %>
 
 
+<asp:Content ID="cabecera" ContentPlaceHolderID="ContentPlaceHeader" runat="server">
+    <div id="header">
+        <h2> Web App</h2>
+        <div class="image">
+            <asp:Image ImageUrl=".\imagenes\clapperboard.png" runat="server" ImageAlign="Right" />
+
+        </div>
+    </div>
+</asp:Content>
+
+
     
 <asp:Content ID="menuPrincipal" ContentPlaceHolderID="ContentPlaceMenu" runat="server">
    <form id="form1" runat="server">
@@ -15,8 +26,8 @@
                 <DynamicMenuStyle BackColor="#FFFBD6" />
                 <DynamicSelectedStyle BackColor="#FFCC66" />
                 <Items>
-                    <asp:MenuItem Text="Peliculas" Value="Peliculas"></asp:MenuItem>
-                    <asp:MenuItem Text="Cesta de Compra" Value="Cesta de Compra"></asp:MenuItem>
+                    <asp:MenuItem Text="Peliculas" Value="Peliculas" NavigateUrl="~/frmPeliculas.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Cesta de Compra" Value="Cesta de Compra" NavigateUrl="~/frmCesta.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Cambiar Contraseña" Value="Cambiar Contraseña" NavigateUrl="~/frmChangePassword.aspx"></asp:MenuItem>
                 </Items>
                 <StaticHoverStyle BackColor="#990000" ForeColor="White" />

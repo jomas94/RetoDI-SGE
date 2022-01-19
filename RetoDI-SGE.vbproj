@@ -138,10 +138,12 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\webApp.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="frmCesta.aspx" />
     <Content Include="frmChangePassword.aspx" />
     <Content Include="frmLogin.aspx" />
     <Content Include="frmMenuUsuario.aspx" />
@@ -157,6 +159,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="imagenes\clapperboard.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -212,6 +215,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.vb">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmCesta.aspx.designer.vb">
+      <DependentUpon>frmCesta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmCesta.aspx.vb">
+      <DependentUpon>frmCesta.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="frmChangePassword.aspx.designer.vb">
       <DependentUpon>frmChangePassword.aspx</DependentUpon>
