@@ -28,7 +28,7 @@
                 <Items>
                     <asp:MenuItem Text="Peliculas" Value="Peliculas"></asp:MenuItem>
                     <asp:MenuItem Text="Cesta de Compra" Value="Cesta de Compra"></asp:MenuItem>
-                    <asp:MenuItem Text="Cambiar Contraseña" Value="Cambiar Contraseña"></asp:MenuItem>
+                    <asp:MenuItem Text="Cambiar Contraseña" Value="Cambiar Contraseña" NavigateUrl="~/frmChangePassword.aspx"></asp:MenuItem>
                 </Items>
                 <StaticHoverStyle BackColor="#990000" ForeColor="White" />
                 <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
