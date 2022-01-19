@@ -8,8 +8,8 @@
 <asp:Content ID="cabecera" ContentPlaceHolderID="ContentPlaceHeader" runat="server">
     <div id="header">
         <h2> Web App</h2>
-        <div style="width:100px">
-            <asp:Image ImageUrl=".\imagenes\clapperboard.png" runat="server" />
+        <div class="image">
+            <asp:Image ImageUrl=".\imagenes\clapperboard.png" runat="server" ImageAlign="Right" />
 
         </div>
     </div>
@@ -26,7 +26,7 @@
                 <DynamicMenuStyle BackColor="#FFFBD6" />
                 <DynamicSelectedStyle BackColor="#FFCC66" />
                 <Items>
-                    <asp:MenuItem Text="Peliculas" Value="Peliculas"></asp:MenuItem>
+                    <asp:MenuItem Text="Peliculas" Value="Peliculas" NavigateUrl="~/frmChangePassword.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Cesta de Compra" Value="Cesta de Compra"></asp:MenuItem>
                     <asp:MenuItem Text="Cambiar Contraseña" Value="Cambiar Contraseña" NavigateUrl="~/frmChangePassword.aspx"></asp:MenuItem>
                 </Items>

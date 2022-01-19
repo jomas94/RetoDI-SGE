@@ -138,10 +138,12 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\webApp.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="frmCesta.aspx" />
     <Content Include="frmChangePassword.aspx" />
     <Content Include="frmLogin.aspx" />
     <Content Include="frmMenuUsuario.aspx" />
@@ -212,6 +214,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.vb">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmCesta.aspx.designer.vb">
+      <DependentUpon>frmCesta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmCesta.aspx.vb">
+      <DependentUpon>frmCesta.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="frmChangePassword.aspx.designer.vb">
       <DependentUpon>frmChangePassword.aspx</DependentUpon>
