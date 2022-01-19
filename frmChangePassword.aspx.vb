@@ -30,7 +30,7 @@ Public Class frmChangePassword
 
     Protected Sub CambiarPass(newPassword As String)
 
-        Dim id As Integer = HttpContext.Current.Session("UserId")
+        Dim id As Integer = HttpContext.Current.Session("userID")
 
         Dim User_Exist As Boolean = False
 
@@ -57,12 +57,11 @@ Public Class frmChangePassword
             End If
         End Try
 
-        Dim sql As String = "UPDATE CLientes Set Password = '" & newPassword & "' WHERE ClienteId = " & id
-
-        Dim cmd As OleDbCommand = New OleDbCommand(sql, _OleDbConnection)
+        Dim sql As String = "UPDATE Clientes SET [Password] = '" & newPassword & "' WHERE [ClienteId] = " & id & ";"
 
         Try
             _OleDbConnection.Open()
+            Dim cmd As OleDbCommand = New OleDbCommand(sql, _OleDbConnection)
             cmd.ExecuteNonQuery()
 
 

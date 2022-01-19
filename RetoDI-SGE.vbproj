@@ -145,6 +145,7 @@
     <Content Include="frmChangePassword.aspx" />
     <Content Include="frmLogin.aspx" />
     <Content Include="frmMenuUsuario.aspx" />
+    <Content Include="frmPeliculas.aspx" />
     <Content Include="frmPrincipal.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -231,6 +232,13 @@
     </Compile>
     <Compile Include="frmMenuUsuario.aspx.vb">
       <DependentUpon>frmMenuUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmPeliculas.aspx.designer.vb">
+      <DependentUpon>frmPeliculas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmPeliculas.aspx.vb">
+      <DependentUpon>frmPeliculas.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="frmPrincipal.aspx.designer.vb">
