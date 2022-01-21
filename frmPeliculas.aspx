@@ -1,13 +1,10 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="frmPeliculas.aspx.vb" Inherits="RetoDI_SGE.frmPeliculas" %>
+﻿<%@ Page Language="vb"
+    AutoEventWireup="false" 
+    CodeBehind="frmPeliculas.aspx.vb"
+    MasterPageFile="~/WebApp.Master"
+    Inherits="RetoDI_SGE.frmPeliculas" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
+<asp:Content ID="formCesta" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
         <div>
             <asp:Label ID="Label2" runat="server" Text="PAIS:" Font-Overline="False" Font-Size="Larger" Font-Strikeout="False"></asp:Label>
@@ -45,5 +42,5 @@
             <br />
         </div>
     </form>
-</body>
-</html>
+
+</asp:Content>

@@ -1,16 +1,22 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="frmCesta.aspx.vb" Inherits="RetoDI_SGE.frmCesta" %>
+﻿<%@ Page Language="vb"
+    AutoEventWireup="false"
+    MasterPageFile="~/WebApp.Master"
+    CodeBehind="frmCesta.aspx.vb" 
+    Inherits="RetoDI_SGE.frmCesta" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="formCesta" ContentPlaceHolderID="MainContent" runat="server">
+   
         <div>
+            <h2>Pagina CESTA</h2>
+             <h2>Pagina CESTA</h2>
+             <h2>Pagina CESTA</h2>
+             <h2>Pagina CESTA</h2>
+             <h2>Pagina CESTA</h2>
+             <h2>Pagina CESTA</h2>
+             <h2>Pagina CESTA</h2>
+             <h2>Pagina CESTA</h2> <h2>Pagina CESTA</h2> <h2>Pagina CESTA</h2>
         </div>
-    </form>
-</body>
-</html>
+
+</asp:Content>
+    
+
