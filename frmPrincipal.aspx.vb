@@ -5,8 +5,11 @@
         Dim estaLogeado As Boolean
 
         estaLogeado = HttpContext.Current.User.Identity.IsAuthenticated
+
         If Not estaLogeado Then
             FormsAuthentication.RedirectToLoginPage()
+        Else
+            Me.Master.FindControl("ContentPlaceMenu").Visible = True
         End If
 
     End Sub

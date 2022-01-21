@@ -6,7 +6,7 @@
 
 
     
-<asp:Content ID="menuPrincipal" ContentPlaceHolderID="ContentPlaceMenu" runat="server">
+<asp:Content ID="menuPrincipal" ContentPlaceHolderID="MainContent" runat="server">
    <form id="form1" runat="server">
        <div class="container principal">
            <asp:Image ImageUrl="~\imagenes\upFlix.png" runat="server" />
