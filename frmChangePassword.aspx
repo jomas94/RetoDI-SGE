@@ -1,13 +1,10 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="frmChangePassword.aspx.vb" Inherits="RetoDI_SGE.frmChangePassword" %>
+﻿<%@ Page Language="vb" 
+    AutoEventWireup="false"
+    MasterPageFile="~/WebApp.Master"
+    CodeBehind="frmChangePassword.aspx.vb"
+    Inherits="RetoDI_SGE.frmChangePassword" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
+<asp:Content ID="menuUsuario" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
         <div>
             <asp:Label ID="Label1" runat="server" Text="CAMBIAR CONTRASEÑA"></asp:Label>
@@ -28,5 +25,4 @@
             <asp:Button ID="btnCambiarPass" runat="server" Text="Cambiar Contraseña" />
         </div>
     </form>
-</body>
-</html>
+</asp:Content>

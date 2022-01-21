@@ -15,7 +15,7 @@ Public Class frmLogin
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        Me.Master.FindControl("ContentPlaceMainPage").Visible = True
+        Me.Master.FindControl("ContentPlaceMenu").Visible = False
 
     End Sub
 
@@ -33,13 +33,6 @@ Public Class frmLogin
             HttpContext.Current.Session("userID") = ID
 
         End If
-
-        'If Me.Login1.UserName = "Jomario" And Me.Login1.Password = "1234" Then
-        'e.Authenticated = True
-        'Response.Redirect("frmPrincipal.aspx")
-
-        'FormsAuthentication.RedirectFromLoginPage(Login1.UserName, Login1.RememberMeSet)
-        '   End If
 
     End Sub
 

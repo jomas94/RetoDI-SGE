@@ -1,6 +1,27 @@
 ﻿/**   CSS CREADO PARA NUESTRAS PROPRIAS CLASES*/
 
 img {
-    width: 100px;
-    height: 100px;
+    margin-top: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+.navbar-inverse {
+    color: red;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: gray;
+    text-align: center;
+    font-size: 30px;
+        border-color: gray;
+    -webkit-box-shadow: 0px 7px 15px 5px rgba(122,122,122,0.8);
+    box-shadow: 0px 5px 10px 5px rgba(122,122,122,0.8);
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #a60c0c;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #a60c0c;
+    font-size: 30px;
 }

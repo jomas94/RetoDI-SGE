@@ -23,24 +23,6 @@ Partial Public Class WebApp
     Protected WithEvents head As Global.System.Web.UI.WebControls.ContentPlaceHolder
 
     '''<summary>
-    '''Control ContentPlaceHeader.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents ContentPlaceHeader As Global.System.Web.UI.WebControls.ContentPlaceHolder
-
-    '''<summary>
-    '''Control ContentPlaceMainPage.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents ContentPlaceMainPage As Global.System.Web.UI.WebControls.ContentPlaceHolder
-
-    '''<summary>
     '''Control ContentPlaceMenu.
     '''</summary>
     '''<remarks>
@@ -50,24 +32,6 @@ Partial Public Class WebApp
     Protected WithEvents ContentPlaceMenu As Global.System.Web.UI.WebControls.ContentPlaceHolder
 
     '''<summary>
-    '''Control ContentPlaceHolderLogin.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents ContentPlaceHolderLogin As Global.System.Web.UI.WebControls.ContentPlaceHolder
-
-    '''<summary>
-    '''Control ContentPlaceMenuUsuario.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents ContentPlaceMenuUsuario As Global.System.Web.UI.WebControls.ContentPlaceHolder
-
-    '''<summary>
     '''Control MainContent.
     '''</summary>
     '''<remarks>
@@ -75,4 +39,13 @@ Partial Public Class WebApp
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents MainContent As Global.System.Web.UI.WebControls.ContentPlaceHolder
+
+    '''<summary>
+    '''Control ContentPlaceHolderLogin.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents ContentPlaceHolderLogin As Global.System.Web.UI.WebControls.ContentPlaceHolder
 End Class

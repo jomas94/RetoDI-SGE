@@ -15,32 +15,49 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <asp:ContentPlaceHolder ID="ContentPlaceHeader" runat="server">
-    </asp:ContentPlaceHolder>
-
-    <asp:ContentPlaceHolder ID="ContentPlaceMainPage" runat="server">
-    </asp:ContentPlaceHolder>
-
-    <div class="container menu">
+ 
+    <div class="container menu" >
 
         <asp:ContentPlaceHolder ID="ContentPlaceMenu" runat="server">
-        </asp:ContentPlaceHolder>
+       
+            <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">WebApp</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="frmPrincipal.aspx">
+                              <asp:Image ImageUrl=".\imagenes\casa.png" runat="server" ImageAlign="Right" /> </a></li>
+                        <li><a runat="server" href="frmPeliculas.aspx">Peliculas</a></li>
+                        <li><a runat="server" href="frmCesta.aspx">Cesta</a></li>
+                    </ul>
+                     <div class="image">
+                    <asp:Image ImageUrl=".\imagenes\clapperboard.png" runat="server" ImageAlign="Right" />
+                </div>
+                </div>
+            </div>
+        </div>
+            </asp:ContentPlaceHolder>
     </div>
 
+       <div class="container body-content">
 
-    <asp:ContentPlaceHolder ID="ContentPlaceHolderLogin" runat="server">
-    </asp:ContentPlaceHolder>
+      <asp:ContentPlaceHolder   ID="MainContent" runat="server"/>
+    
+    </div>
 
-    <asp:ContentPlaceHolder ID="ContentPlaceMenuUsuario" runat="server">
-    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderLogin" runat="server"/>
+  
+
 
     <div class="container body-content">
-        <asp:ContentPlaceHolder ID="MainContent" runat="server">
-        </asp:ContentPlaceHolder>
-
-
-
-
+        
         <hr />
         <footer>
             <p>&copy; <%: DateTime.Now.Year %> - WebApp - Desarrollado por Jon, Jomario, M. Arriola, Dani para el ETHAZI de DI-SGE 2EVA</p>
