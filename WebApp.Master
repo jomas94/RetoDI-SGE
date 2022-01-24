@@ -16,9 +16,9 @@
 </head>
 <body>
  
-    <div class="container menu" >
+    <%--<div class="container menu" >--%>
 
-        <asp:ContentPlaceHolder ID="ContentPlaceMenu" runat="server">
+<%--        <asp:ContentPlaceHolder ID="ContentPlaceMenu" runat="server">
        
             <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
@@ -40,15 +40,45 @@
                         <li><a runat="server" href="frmPeliculas.aspx">Peliculas</a></li>
                         <li><a runat="server" href="frmCesta.aspx">Cesta</a></li>
                     </ul>
-                     <div class="image">
-                    <asp:Image ImageUrl=".\imagenes\user.png" runat="server" ImageAlign="Right" />
-                </div>
+                     <div class="menuUsuario">
+                     <div class="image"> <ul class="submenu">  
+                         <asp:Image ImageUrl=".\imagenes\user.png" runat="server" ImageAlign="Right" /></div>
+                         
+						    <li><a href="galeria.html#imagenes">Cambiar Contraseña</a></li>
+						    <li><a href="galeria.html#videos">Salir</a></li>
+					    </ul>
+                    </div>
                 </div>
                  
             </div>
         </div>
-            </asp:ContentPlaceHolder>
-    </div>
+            </asp:ContentPlaceHolder>--%>
+
+        <div id="nav_principal">
+		<div id="logo"><a runat="server" href="frmPrincipal.aspx"><img src=".\imagenes\clapperboard.png" alt="Logotipo"></a></div>	
+		<div class="titulo"><p>Web App</p></div>
+		<div class="menu">
+			 <ul>
+				<li><a runat="server" href="frmPrincipal.aspx">Inicio</a></li>
+				<li><a runat="server" href="frmPeliculas.aspx">Peliculas</a></li>
+                 <li><a runat="server" href="frmCesta.aspx">Cesta</a></li>
+				<li><img src=".\imagenes\user.png" alt="Logotipo">
+					<ul class="submenu">
+						<li><a runat="server" href="frmChangePassword.aspx">Cambiar Contraseña</a></li>
+						<li><a runat="server" href="frmChangePassword.aspx">Salir</a></li>
+					</ul></li>
+
+				
+			</ul>
+
+		</div>
+
+		
+		</div>
+
+
+
+    <%--</div>--%>
 
        
     <div class="contenidoPrincipal">

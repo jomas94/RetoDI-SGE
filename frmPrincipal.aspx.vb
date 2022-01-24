@@ -9,7 +9,7 @@
         If Not estaLogeado Then
             FormsAuthentication.RedirectToLoginPage()
         Else
-            Me.Master.FindControl("ContentPlaceMenu").Visible = True
+            'Me.Master.FindControl("ContentPlaceMenu").Visible = True
         End If
 
     End Sub

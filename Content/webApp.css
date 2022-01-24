@@ -1,10 +1,5 @@
 ﻿/**   CSS CREADO PARA NUESTRAS PROPRIAS CLASES*/
 
-img {
-    margin-top: 5px;
-    width: 50px;
-    height: 50px;
-}
 
 .navbar-inverse {
     color: red;
@@ -29,4 +24,171 @@ img {
 .contenidoPrincipal{
 
     margin-top:100px;
+}
+
+ .submenu {
+    list-style: none;
+    display: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    text-align: left;
+    position: absolute;
+}
+
+.menu li:hover .submenu {
+    display: block;
+}
+
+
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif'Roboto Slab', Arial, Helvetica, sans-serif;
+    /*background: #cc7726;*/
+    margin: 0px;
+    /* width: 100%; */
+    padding: 0px !important;
+}
+
+div#camera {
+    /* imagen a la derecha del menu*/
+    /*float: right;*/
+}
+
+div#camera img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 44px;
+    /* position: absolute; */
+    margin: 2px;
+    margin-top: 5px;
+    margin-right: 15px;
+    transform: rotateY(180deg);
+    /* float: right; */
+    /* display: flex; */
+}
+
+div#logo img {
+    margin-left: 10px;
+    /* padding: 0.5em; */
+    /* margin: 0px auto; */
+    background-size: cover;
+    width: 70px;
+    height:70px;
+    float: left;
+    background-repeat: no-repeat;
+    margin-top: 10px;
+}
+
+div#nav_principal {
+    background-color: darkred;
+    /*background-repeat: repeat;*/
+    /*background-image: url("../img/ebb221cf.png");*/
+    height: 105px;
+    z-index: 3;
+    /* position: relative; */
+    top: 0;
+    box-shadow: 0px 1px 2px 1px black;
+    clear: both;
+    /* width: 100%; */
+}
+
+.titulo p {
+    margin: 0;
+    font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+}
+
+#subtitulo {
+    font-family: 'Roboto thin', Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-size: 30px;
+}
+
+.titulo {
+    margin-left: 45px;
+    font-size: 45px; /* margin: 14px; */
+    /* width: 30%; */
+    display: block;
+    float: left; /* margin: 19px; */ /* margin: 13px; */
+    color: white;
+    text-decoration: none;
+    padding: 4px; /* font: 800 30px 'Roboto'; */
+}
+
+
+#portada img {
+    width: 100%;
+}
+
+.menu {
+    font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+    width: 60%;
+    display: inline-block;
+    text-align: right;
+    height: 100%;
+    margin: auto;
+   
+}
+
+.menu ul {
+    list-style: none;
+    background-color: darkred;
+        display: block; 
+        margin: 0; 
+        padding: 0;  
+}
+
+.menu > ul > li {
+    position: relative;
+    display: inline-block;
+    padding: 20px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+.menu .submenu {
+    list-style: none;
+    display: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    text-align: left;
+    position: absolute;
+}
+
+.menu li:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    background-color: darkred;
+}
+
+.submenu li a {
+    margin-top: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+
+/* aplicado al texto del menu */
+.menu li a {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 550;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.menu li:hover {
+    transition: all 0.3s;
+    background-color: gray;
+}
+
+.menu a:hover {
+    color: black;
+    transition: all 0.3s;
 }
