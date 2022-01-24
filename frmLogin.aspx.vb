@@ -30,7 +30,7 @@ Public Class frmLogin
 
             FormsAuthentication.RedirectFromLoginPage(Login1.UserName, Login1.RememberMeSet)
 
-            Me.Master.FindControl("ContentPlaceMenu").Visible = True
+            'Me.Master.FindControl("ContentPlaceMenu").Visible = True
 
             HttpContext.Current.Session("userID") = ID
 
