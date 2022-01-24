@@ -40,17 +40,18 @@
                         <li><a runat="server" href="frmPeliculas.aspx">Peliculas</a></li>
                         <li><a runat="server" href="frmCesta.aspx">Cesta</a></li>
                     </ul>
-                     
-                </div>
-                 <div class="image">
+                     <div class="image">
                     <asp:Image ImageUrl=".\imagenes\user.png" runat="server" ImageAlign="Right" />
                 </div>
+                </div>
+                 
             </div>
         </div>
             </asp:ContentPlaceHolder>
     </div>
 
        
+    <div class="contenidoPrincipal">
 
       <asp:ContentPlaceHolder   ID="MainContent" runat="server">
             <div class="container body-content">
@@ -59,7 +60,7 @@
                 </div>
 
       </asp:ContentPlaceHolder> 
-    
+    </div>
 
     <asp:ContentPlaceHolder ID="ContentPlaceHolderLogin" runat="server"/>
   
