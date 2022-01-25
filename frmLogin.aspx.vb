@@ -15,7 +15,7 @@ Public Class frmLogin
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        'Me.Master.FindControl("ContentPlaceMenu").Visible = False
+        Me.Master.FindControl("ContentPlaceMenu").Visible = False
 
     End Sub
 
@@ -30,7 +30,7 @@ Public Class frmLogin
 
             FormsAuthentication.RedirectFromLoginPage(Login1.UserName, Login1.RememberMeSet)
 
-            Me.Master.FindControl("ContentPlaceMenu").Visible = True
+            'Me.Master.FindControl("ContentPlaceMenu").Visible = True
 
             HttpContext.Current.Session("userID") = ID
 

@@ -158,6 +158,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="imagenes\bg-01.jpg" />
     <Content Include="imagenes\casa.png" />
     <Content Include="imagenes\clapperboard.png" />
     <Content Include="imagenes\hogar.png" />
