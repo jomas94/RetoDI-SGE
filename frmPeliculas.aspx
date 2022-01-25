@@ -30,6 +30,7 @@
                     <asp:BoundField DataField="Director" HeaderText="Director" SortExpression="Director" />
                     <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" />
                     <asp:ButtonField ButtonType="Button" CommandName="btnAlquilar" Text="Alquilar" />
+                    <asp:ButtonField ButtonType="Button" CommandName="btnComprar" Text="Comprar" />
                 </Columns>
             </asp:GridView>
             <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [PeliculaId], [Titulo], [Duracion], [Director], [Precio] FROM [Peliculas] WHERE ([CodGenero] LIKE (SELECT [GeneroId] From Generos WHERE Nombre LIKE  '%' + ? + '%') AND [Pais]  LIKE  '%' + ? + '%') ">
