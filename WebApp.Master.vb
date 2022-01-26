@@ -5,4 +5,12 @@
 
     End Sub
 
+    Protected Sub Salir()
+
+        Session.Abandon()
+        FormsAuthentication.SignOut()
+        Response.Redirect("frmPrincipal.aspx")
+
+    End Sub
+
 End Class

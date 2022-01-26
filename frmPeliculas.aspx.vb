@@ -145,48 +145,68 @@ Public Class frmPeliculas
 
             Dim contadorFacturas As Integer = 0
 
-            Dim sql As String = "SELECT [Precio] FROM [Peliculas] WHERE [PeliculaId] LIKE '" + peliculaIdString + "';"
+            Dim repe As Boolean = False
 
-            Dim cmd As OleDbCommand = New OleDbCommand(sql, _OleDbConnection)
+            For Each lineaFac In lineasFactura
 
-            Try
-                _OleDbConnection.Open()
-                precioPeli = cmd.ExecuteScalar
+                If lineaFac.Value.peliculaId = peliculaId Then
 
+                    repe = True
 
-            Catch ex As Exception
-
-            Finally
-                If Not IsNothing(OleDbConnection) Then
-                    OleDbConnection.Close()
                 End If
-            End Try
+
+            Next
+
+            If repe = True Then
+
+                MsgBox("Pelicula ya comprada o alquilada")
+
+            Else
+
+                Dim sql As String = "SELECT [Precio] FROM [Peliculas] WHERE [PeliculaId] LIKE '" + peliculaIdString + "';"
+
+                Dim cmd As OleDbCommand = New OleDbCommand(sql, _OleDbConnection)
+
+                Try
+                    _OleDbConnection.Open()
+                    precioPeli = cmd.ExecuteScalar
 
 
-            sql = "SELECT COUNT(*) FROM [Facturas];"
+                Catch ex As Exception
 
-            cmd = New OleDbCommand(sql, _OleDbConnection)
+                Finally
+                    If Not IsNothing(OleDbConnection) Then
+                        OleDbConnection.Close()
+                    End If
+                End Try
 
-            Try
-                _OleDbConnection.Open()
-                contadorFacturas = cmd.ExecuteScalar
+
+                sql = "SELECT COUNT(*) FROM [Facturas];"
+
+                cmd = New OleDbCommand(sql, _OleDbConnection)
+
+                Try
+                    _OleDbConnection.Open()
+                    contadorFacturas = cmd.ExecuteScalar
 
 
-            Catch ex As Exception
+                Catch ex As Exception
 
-            Finally
-                If Not IsNothing(OleDbConnection) Then
-                    OleDbConnection.Close()
-                End If
-            End Try
+                Finally
+                    If Not IsNothing(OleDbConnection) Then
+                        OleDbConnection.Close()
+                    End If
+                End Try
 
-            contadorFacturas = contadorFacturas + 1
+                contadorFacturas = contadorFacturas + 1
 
-            Dim newLinea As New lineaFac(contadorFacturas, 1, peliculaId, precioPeli, 0, True)
+                Dim newLinea As New lineaFac(contadorFacturas, 1, peliculaId, precioPeli, 0, True)
 
-            lineasFactura.Add(contadorDicctionary, newLinea)
+                lineasFactura.Add(contadorDicctionary, newLinea)
 
-            contadorDicctionary = +1
+                contadorDicctionary = +1
+
+            End If
 
         End If
     End Sub

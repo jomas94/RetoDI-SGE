@@ -9,16 +9,16 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Web App</title>
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
- 
-    <%--<div class="container menu" >--%>
 
-<%--        <asp:ContentPlaceHolder ID="ContentPlaceMenu" runat="server">
+
+
+    <%--        <asp:ContentPlaceHolder ID="ContentPlaceMenu" runat="server">
        
             <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
@@ -53,51 +53,47 @@
             </div>
         </div>
             </asp:ContentPlaceHolder>--%>
-
+    <asp:ContentPlaceHolder ID="ContentPlaceMenu" runat="server">
         <div id="nav_principal">
-		<div id="logo"><a runat="server" href="frmPrincipal.aspx"><img src=".\imagenes\clapperboard.png" alt="Logotipo"></a></div>	
-		<div class="titulo"><p>Web App</p></div>
-		<div class="menu">
-			 <ul>
-				<li><a runat="server" href="frmPrincipal.aspx">Inicio</a></li>
-				<li><a runat="server" href="frmPeliculas.aspx">Peliculas</a></li>
-                 <li><a runat="server" href="frmCesta.aspx">Cesta</a></li>
-				<li><img src=".\imagenes\user.png" alt="Logotipo">
-					<ul class="submenu">
-						<li><a runat="server" href="frmChangePassword.aspx">Cambiar Contraseña</a></li>
-						<li><a runat="server" href="frmChangePassword.aspx">Salir</a></li>
-					</ul></li>
-
-				
-			</ul>
-
-		</div>
-
-		
-		</div>
-
+            <div id="logo"><a runat="server" href="frmPrincipal.aspx">
+                <img src=".\imagenes\clapperboard.png" alt="Logotipo"></a></div>
+            <div class="titulo">
+                <p>Web App</p>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a runat="server" href="frmPrincipal.aspx">Inicio</a></li>
+                    <li><a runat="server" href="frmPeliculas.aspx">Peliculas</a></li>
+                    <li><a runat="server" href="frmCesta.aspx">Cesta</a></li>
+                    <li>
+                        <img src=".\imagenes\user.png" alt="Logotipo">
+                        <ul class="submenu">
+                            <li><a runat="server" href="frmChangePassword.aspx">Cambiar Contraseña</a></li>
+                            <li><a runat="server" href="#" onserverclick="Salir">Salir</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
 
 
-    <%--</div>--%>
+        </div>
+    </asp:ContentPlaceHolder>
 
-       
     <div class="contenidoPrincipal">
 
-      <asp:ContentPlaceHolder   ID="MainContent" runat="server">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
             <div class="container body-content">
+            </div>
 
-
-                </div>
-
-      </asp:ContentPlaceHolder> 
+        </asp:ContentPlaceHolder>
     </div>
 
-    <asp:ContentPlaceHolder ID="ContentPlaceHolderLogin" runat="server"/>
-  
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderLogin" runat="server" />
+
 
 
     <div class="container body-content">
-        
+
         <hr />
         <footer>
             <p>&copy; <%: DateTime.Now.Year %> - WebApp - Desarrollado por Jon, Jomario, M. Arriola, Dani para el ETHAZI de DI-SGE 2EVA</p>
