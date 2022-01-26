@@ -14,8 +14,6 @@ Public Class frmPeliculas
 
     Public contadorFacturas As Integer = 0
 
-    Dim cesta As List(Of lineaFac) = New List(Of lineaFac)
-
     'Public Shared lineasFactura As New Dictionary(Of Integer, lineaFac)
 
     Dim contadorDicctionary As Integer = 0
@@ -39,6 +37,8 @@ Public Class frmPeliculas
     End Sub
 
     Protected Sub GridView1_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles GridView1.RowCommand
+
+        Dim cesta As New List(Of lineaFac)
 
         Dim fileName As String
         Dim path As String = AppDomain.CurrentDomain.BaseDirectory
@@ -74,7 +74,10 @@ Public Class frmPeliculas
 
             Dim repe As Boolean = False
 
-            cesta = HttpContext.Current.Session("Reto2Carrito")
+            If Not IsNothing(HttpContext.Current.Session("Reto2Carrito")) Then
+                ' recuperar la cesta desde sesión
+                cesta = HttpContext.Current.Session("Reto2Carrito")
+            End If
 
             For i = 0 To cesta.Count - 1
 
@@ -133,12 +136,6 @@ Public Class frmPeliculas
 
                 Dim newLinea As New lineaFac(contadorFacturas, 1, peliculaId, precioPeli, 0, False)
 
-                ' comprobar si existe la variable de sesión
-                If Not IsNothing(HttpContext.Current.Session("Reto2Carrito")) Then
-                    ' recuperar la cesta desde sesión
-                    cesta = HttpContext.Current.Session("Reto2Carrito")
-                End If
-
                 cesta.Add(newLinea)
                 HttpContext.Current.Session("Reto2Carrito") = cesta
 
@@ -158,7 +155,10 @@ Public Class frmPeliculas
 
             Dim repe As Boolean = False
 
-            cesta = HttpContext.Current.Session("Reto2Carrito")
+            If Not IsNothing(HttpContext.Current.Session("Reto2Carrito")) Then
+                ' recuperar la cesta desde sesión
+                cesta = HttpContext.Current.Session("Reto2Carrito")
+            End If
 
             For i = 0 To cesta.Count - 1
 
@@ -214,12 +214,6 @@ Public Class frmPeliculas
                 contadorFacturas = contadorFacturas + 1
 
                 Dim newLinea As New lineaFac(contadorFacturas, 1, peliculaId, precioPeli, 0, True)
-
-                ' comprobar si existe la variable de sesión
-                If Not IsNothing(HttpContext.Current.Session("Reto2Carrito")) Then
-                    ' recuperar la cesta desde sesión
-                    cesta = HttpContext.Current.Session("Reto2Carrito")
-                End If
 
                 cesta.Add(newLinea)
                 HttpContext.Current.Session("Reto2Carrito") = cesta
