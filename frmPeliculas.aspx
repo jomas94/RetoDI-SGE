@@ -40,6 +40,8 @@
                 </SelectParameters>
             </asp:SqlDataSource>
             <br />
+            <asp:Button ID="Button1" runat="server" Text="Button" Width="97px" />
+            <br />
         </div>
     </form>
 

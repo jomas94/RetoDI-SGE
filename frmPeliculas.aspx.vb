@@ -14,7 +14,9 @@ Public Class frmPeliculas
 
     Public contadorFacturas As Integer = 0
 
-    Shared lineasFactura As New Dictionary(Of Integer, lineaFac)
+    Dim cesta As List(Of lineaFac) = New List(Of lineaFac)
+
+    'Public Shared lineasFactura As New Dictionary(Of Integer, lineaFac)
 
     Dim contadorDicctionary As Integer = 0
 
@@ -72,9 +74,11 @@ Public Class frmPeliculas
 
             Dim repe As Boolean = False
 
-            For Each lineaFac In lineasFactura
+            cesta = HttpContext.Current.Session("Reto2Carrito")
 
-                If lineaFac.Value.peliculaId = peliculaId Then
+            For i = 0 To cesta.Count - 1
+
+                If cesta(i).peliculaId = peliculaId Then
 
                     repe = True
 
@@ -90,7 +94,7 @@ Public Class frmPeliculas
 
                 Dim peliculaIdString As String = peliculaId.ToString()
 
-                Dim sql As String = "SELECT [Precio] FROM [Peliculas] WHERE [PeliculaId] LIKE '" + peliculaIdString + "';"
+                Dim sql As String = "SELECT [Precio] FROM [Peliculas] WHERE [PeliculaId] = " & peliculaIdString & ";"
 
                 Dim cmd As OleDbCommand = New OleDbCommand(sql, _OleDbConnection)
 
@@ -129,11 +133,18 @@ Public Class frmPeliculas
 
                 Dim newLinea As New lineaFac(contadorFacturas, 1, peliculaId, precioPeli, 0, False)
 
-                lineasFactura.Add(contadorDicctionary, newLinea)
+                ' comprobar si existe la variable de sesión
+                If Not IsNothing(HttpContext.Current.Session("Reto2Carrito")) Then
+                    ' recuperar la cesta desde sesión
+                    cesta = HttpContext.Current.Session("Reto2Carrito")
+                End If
+
+                cesta.Add(newLinea)
+                HttpContext.Current.Session("Reto2Carrito") = cesta
 
                 contadorDicctionary = +1
 
-                Dim countLinea As Integer = lineasFactura.Count
+                Dim countLinea As Integer = cesta.Count
 
             End If
 
@@ -147,9 +158,11 @@ Public Class frmPeliculas
 
             Dim repe As Boolean = False
 
-            For Each lineaFac In lineasFactura
+            cesta = HttpContext.Current.Session("Reto2Carrito")
 
-                If lineaFac.Value.peliculaId = peliculaId Then
+            For i = 0 To cesta.Count - 1
+
+                If cesta(i).peliculaId = peliculaId Then
 
                     repe = True
 
@@ -202,7 +215,14 @@ Public Class frmPeliculas
 
                 Dim newLinea As New lineaFac(contadorFacturas, 1, peliculaId, precioPeli, 0, True)
 
-                lineasFactura.Add(contadorDicctionary, newLinea)
+                ' comprobar si existe la variable de sesión
+                If Not IsNothing(HttpContext.Current.Session("Reto2Carrito")) Then
+                    ' recuperar la cesta desde sesión
+                    cesta = HttpContext.Current.Session("Reto2Carrito")
+                End If
+
+                cesta.Add(newLinea)
+                HttpContext.Current.Session("Reto2Carrito") = cesta
 
                 contadorDicctionary = +1
 
