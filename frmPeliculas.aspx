@@ -24,6 +24,7 @@
             <br />
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="PeliculaId" DataMember="DefaultView" DataSourceID="SqlDataSource3" Width="630px">
                 <Columns>
+                    <asp:ButtonField ButtonType="Button" CommandName="btnVer" Text="Visualizar" />
                     <asp:BoundField DataField="PeliculaId" HeaderText="PeliculaId" SortExpression="PeliculaId" ReadOnly="True" Visible="False" />
                     <asp:BoundField DataField="Titulo" HeaderText="Titulo" SortExpression="Titulo" />
                     <asp:BoundField DataField="Duracion" HeaderText="Duracion" SortExpression="Duracion" />

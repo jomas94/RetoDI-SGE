@@ -147,6 +147,7 @@
     <Content Include="frmLogin.aspx" />
     <Content Include="frmMenuUsuario.aspx" />
     <Content Include="frmPeliculas.aspx" />
+    <Content Include="frmPeliculasEdit.aspx" />
     <Content Include="frmPrincipal.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -253,6 +254,13 @@
     </Compile>
     <Compile Include="frmPeliculas.aspx.vb">
       <DependentUpon>frmPeliculas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmPeliculasEdit.aspx.designer.vb">
+      <DependentUpon>frmPeliculasEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmPeliculasEdit.aspx.vb">
+      <DependentUpon>frmPeliculasEdit.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="frmPrincipal.aspx.designer.vb">

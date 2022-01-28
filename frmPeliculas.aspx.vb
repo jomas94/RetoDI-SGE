@@ -20,9 +20,13 @@ Public Class frmPeliculas
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
+
+
     End Sub
 
     Protected Sub DropDownList1_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+
 
     End Sub
 
@@ -33,6 +37,8 @@ Public Class frmPeliculas
     End Sub
 
     Protected Sub DropDownList1_SelectedIndexChanged1(sender As Object, e As EventArgs) Handles DropDownList1.SelectedIndexChanged
+
+
 
     End Sub
 
@@ -221,6 +227,23 @@ Public Class frmPeliculas
                 contadorDicctionary = +1
 
             End If
+
+        ElseIf nombreComando = "btnVer" Then
+
+            Dim peliculaIdFRM As Integer
+
+            If Not IsNothing(HttpContext.Current.Session("idPeliEdit")) Then
+                ' recuperar la cesta desde sesión
+                peliculaIdFRM = HttpContext.Current.Session("idPeliEdit")
+            End If
+
+            peliculaIdFRM = CInt(GridView1.DataKeys(selectdIndex).Item("PeliculaId"))
+
+            HttpContext.Current.Session("idPeliEdit") = peliculaIdFRM
+
+
+
+            Response.Redirect("frmPeliculasEdit.aspx")
 
         End If
     End Sub
