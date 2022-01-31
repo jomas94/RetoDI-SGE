@@ -22,19 +22,26 @@ Public Class frmCesta
 
             cesta = HttpContext.Current.Session("Reto2Carrito")
 
-            If Not IsNothing(cesta) Then
-
-                'Label1.Visible = True
-
-
-            End If
-
-            Me.gvCarrito.DataSource = cesta
-            Me.gvCarrito.DataBind()
+            gvCarrito.DataSource = cesta
+            gvCarrito.DataBind()
 
 
+            verificarCarritoVacio()
         End If
 
+
+    End Sub
+
+    Private Sub verificarCarritoVacio()
+
+        Dim cesta As List(Of lineaFac) = New List(Of lineaFac)
+        'If Not IsNothing(HttpContext.Current.Session("Reto2Carrito")) Then
+        cesta = HttpContext.Current.Session("Reto2Carrito")
+        If IsNothing(cesta) Then
+
+            Label1.Visible = True
+
+        End If
 
     End Sub
 
@@ -89,11 +96,18 @@ Public Class frmCesta
             cesta = HttpContext.Current.Session("Reto2Carrito")
         End If
 
+        Dim idUser As Integer
+
+        If Not IsNothing(HttpContext.Current.Session("userID")) Then
+            idUser = HttpContext.Current.Session("userID")
+        End If
+
+
         Dim iDfactura As Integer = cesta(0).CodFac
         Dim fechaActual As Date = DateTime.Today()
         Dim totalFactura As Integer = getTotalFactura()
 
-        Dim queryFactura As String = " INSERT INTO Facturas([FacturaId], [Fecha], [CodCli], [CodVend], [Importe], [IVA], [Descuento], [Devuelta]  ) VALUES( " & iDfactura & ", " & fechaActual & ", 1 , 3 ," & totalFactura & ", 5 , 6 , False );"
+        Dim queryFactura As String = " INSERT INTO Facturas([FacturaId], [Fecha], [CodCli], [CodVend], [Importe], [IVA], [Descuento], [Devuelta]  ) VALUES( " & iDfactura & ", " & fechaActual & ", " & idUser & ", 3 ," & totalFactura & ", 5 , 6 , False );"
 
         Dim cmdFAC As OleDbCommand = New OleDbCommand(queryFactura, _OleDbConnection)
 
@@ -128,8 +142,6 @@ Public Class frmCesta
                         End If
                     End Try
 
-
-
                 Next
 
             Else
@@ -155,7 +167,6 @@ Public Class frmCesta
             End If
         End Try
 
-
     End Sub
 
     Private Function getTotalFactura() As Integer
@@ -179,8 +190,6 @@ Public Class frmCesta
         'HttpContext.Current.Session("idUser") = ""
 
     End Function
-
-
 
 End Class
 
