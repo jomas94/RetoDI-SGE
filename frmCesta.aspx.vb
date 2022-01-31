@@ -89,8 +89,8 @@ Public Class frmCesta
             cesta = HttpContext.Current.Session("Reto2Carrito")
         End If
 
-        Dim iDfactura As Integer = getIdFactura()
-        Dim fechaActual As Date = DateTime.Today
+        Dim iDfactura As Integer = cesta(0).CodFac
+        Dim fechaActual As Date = DateTime.Today()
         Dim totalFactura As Integer = getTotalFactura()
 
         Dim queryFactura As String = " INSERT INTO Facturas([FacturaId], [Fecha], [CodCli], [CodVend], [Importe], [IVA], [Descuento], [Devuelta]  ) VALUES( " & iDfactura & ", " & fechaActual & ", 1 , 3 ," & totalFactura & ", 5 , 6 , False );"
@@ -121,7 +121,7 @@ Public Class frmCesta
                         Dim filas As Integer = cmd.ExecuteNonQuery()
 
                     Catch ex As Exception
-                        'MsgBox(ex.Message)
+                        MsgBox(ex.Message)
                     Finally
                         If Not IsNothing(OleDbConnection) Then
                             OleDbConnection.Close()
@@ -148,7 +148,7 @@ Public Class frmCesta
             MsgBox("Compra Finalizada")
 
         Catch ex As Exception
-            'MsgBox(ex.Message)
+            MsgBox(ex.Message)
         Finally
             If Not IsNothing(OleDbConnection) Then
                 OleDbConnection.Close()
@@ -157,38 +157,7 @@ Public Class frmCesta
 
 
     End Sub
-    Private Function getIdFactura() As Integer
-        Dim fileName As String
-        Dim path As String = AppDomain.CurrentDomain.BaseDirectory
-        path = System.IO.Path.Combine(path, "App_Data", "EMPRESA.mdb")
 
-        fileName = path
-
-        Dim cnnString As String = String.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0}", fileName)
-        OleDbConnection = New OleDbConnection(cnnString)
-
-        Dim queryLineaFac As String = " SELECT MAX(FacturaId) FROM Facturas"
-
-        Dim cmd As OleDbCommand = New OleDbCommand(queryLineaFac, _OleDbConnection)
-        Dim idMaxFac As Integer
-
-        Try
-            _OleDbConnection.Open()
-            idMaxFac = cmd.ExecuteNonQuery()
-
-        Catch ex As Exception
-            ' MsgBox(ex.Message)
-        Finally
-            If Not IsNothing(OleDbConnection) Then
-                OleDbConnection.Close()
-            End If
-        End Try
-
-        MsgBox(idMaxFac)
-
-        Return idMaxFac + 1
-
-    End Function
     Private Function getTotalFactura() As Integer
 
         Dim cesta As List(Of lineaFac) = New List(Of lineaFac)
@@ -206,7 +175,12 @@ Public Class frmCesta
 
         Return total
 
+        'HttpContext.Current.User.Identity.Name
+        'HttpContext.Current.Session("idUser") = ""
+
     End Function
+
+
 
 End Class
 

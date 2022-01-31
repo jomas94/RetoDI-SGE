@@ -121,7 +121,7 @@ Public Class frmPeliculas
                 End Try
 
 
-                sql = "SELECT COUNT(*) FROM [Facturas];"
+                sql = "SELECT MAX(FacturaId) FROM [Facturas];"
 
                 cmd = New OleDbCommand(sql, _OleDbConnection)
 
@@ -200,7 +200,7 @@ Public Class frmPeliculas
                 End Try
 
 
-                sql = "SELECT COUNT(*) FROM [Facturas];"
+                sql = "SELECT MAX(FacturaId) FROM [Facturas];"
 
                 cmd = New OleDbCommand(sql, _OleDbConnection)
 
