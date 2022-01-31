@@ -80,74 +80,82 @@ Public Class frmPeliculas
             Dim nombrePelicula As String = GridView1.Rows(selectdIndex).Cells(2).Text
             Dim repe As Boolean = False
 
-            If Not IsNothing(HttpContext.Current.Session("Reto2Carrito")) Then
-                ' recuperar la cesta desde sesión
-                cesta = HttpContext.Current.Session("Reto2Carrito")
-            End If
+            If ComprobarPeliCompradaAlqilada(peliculaId) = True Then
 
-            For i = 0 To cesta.Count - 1
-
-                If cesta(i).peliculaId = peliculaId Then
-
-                    repe = True
-
-                End If
-
-            Next
-
-            If repe = True Then
-
-                MsgBox("Pelicula ya comprada o alquilada")
+                MsgBox("Peli ya comprada o alquilada")
 
             Else
 
-                Dim peliculaIdString As String = peliculaId.ToString()
+                If Not IsNothing(HttpContext.Current.Session("Reto2Carrito")) Then
+                    ' recuperar la cesta desde sesión
+                    cesta = HttpContext.Current.Session("Reto2Carrito")
+                End If
 
-                Dim sql As String = "SELECT [Precio] FROM [Peliculas] WHERE [PeliculaId] = " & peliculaIdString & ";"
+                For i = 0 To cesta.Count - 1
 
-                Dim cmd As OleDbCommand = New OleDbCommand(sql, _OleDbConnection)
+                    If cesta(i).peliculaId = peliculaId Then
 
-                Try
-                    _OleDbConnection.Open()
-                    precioPeli = cmd.ExecuteScalar
+                        repe = True
 
-
-                Catch ex As Exception
-
-                Finally
-                    If Not IsNothing(OleDbConnection) Then
-                        OleDbConnection.Close()
                     End If
-                End Try
+
+                Next
+
+                If repe = True Then
+
+                    MsgBox("Pelicula ya comprada o alquilada")
+
+                Else
+
+                    Dim peliculaIdString As String = peliculaId.ToString()
+
+                    Dim sql As String = "SELECT [Precio] FROM [Peliculas] WHERE [PeliculaId] = " & peliculaIdString & ";"
+
+                    Dim cmd As OleDbCommand = New OleDbCommand(sql, _OleDbConnection)
+
+                    Try
+                        _OleDbConnection.Open()
+                        precioPeli = cmd.ExecuteScalar
 
 
-                sql = "SELECT COUNT(*) FROM [Facturas];"
+                    Catch ex As Exception
 
-                cmd = New OleDbCommand(sql, _OleDbConnection)
+                    Finally
+                        If Not IsNothing(OleDbConnection) Then
+                            OleDbConnection.Close()
+                        End If
+                    End Try
 
-                Try
-                    _OleDbConnection.Open()
-                    contadorFacturas = cmd.ExecuteScalar
+
+                    sql = "SELECT COUNT(*) FROM [Facturas];"
+
+                    cmd = New OleDbCommand(sql, _OleDbConnection)
+
+                    Try
+                        _OleDbConnection.Open()
+                        contadorFacturas = cmd.ExecuteScalar
 
 
-                Catch ex As Exception
+                    Catch ex As Exception
 
-                Finally
-                    If Not IsNothing(OleDbConnection) Then
-                        OleDbConnection.Close()
-                    End If
-                End Try
+                    Finally
+                        If Not IsNothing(OleDbConnection) Then
+                            OleDbConnection.Close()
+                        End If
+                    End Try
 
-                contadorFacturas = contadorFacturas + 1
+                    contadorFacturas = contadorFacturas + 1
 
-                Dim newLinea As New lineaFac(contadorFacturas, cesta.Count + 1, peliculaId, precioPeli, 0, False, nombrePelicula)
+                    Dim newLinea As New lineaFac(contadorFacturas, cesta.Count + 1, peliculaId, precioPeli, 0, False, nombrePelicula)
 
-                cesta.Add(newLinea)
-                HttpContext.Current.Session("Reto2Carrito") = cesta
+                    cesta.Add(newLinea)
+                    HttpContext.Current.Session("Reto2Carrito") = cesta
 
-                contadorDicctionary = +1
+                    contadorDicctionary = +1
 
-                Dim countLinea As Integer = cesta.Count
+                    Dim countLinea As Integer = cesta.Count
+
+                End If
 
             End If
 
@@ -232,10 +240,22 @@ Public Class frmPeliculas
 
             Dim peliculaIdFRM As Integer
 
+            Dim nombrePelicula As String
+
             If Not IsNothing(HttpContext.Current.Session("idPeliEdit")) Then
                 ' recuperar la cesta desde sesión
                 peliculaIdFRM = HttpContext.Current.Session("idPeliEdit")
             End If
+
+            If Not IsNothing(HttpContext.Current.Session("nombrePeli")) Then
+                ' recuperar la cesta desde sesión
+                nombrePelicula = HttpContext.Current.Session("nombrePeli")
+            End If
+
+
+            nombrePelicula = GridView1.Rows(selectdIndex).Cells(2).Text
+
+            HttpContext.Current.Session("nombrePeli") = nombrePelicula
 
             peliculaIdFRM = CInt(GridView1.DataKeys(selectdIndex).Item("PeliculaId"))
 
@@ -246,5 +266,42 @@ Public Class frmPeliculas
             Response.Redirect("frmPeliculasEdit.aspx")
 
         End If
+    End Sub
+
+    Public Function ComprobarPeliCompradaAlqilada(Id As Integer) As Boolean
+
+        Dim StringId As String = Id.ToString()
+
+        Dim sql As String = "SELECT * FROM [LineasFac] WHERE [PeliculaId] LIKE '" + StringId + "' ;"
+
+        Dim cmd As OleDbCommand = New OleDbCommand(sql, _OleDbConnection)
+
+        Dim esCompradaalquilada As Boolean = False
+
+        Try
+            _OleDbConnection.Open()
+
+            If cmd.ExecuteScalar IsNot Nothing Then
+
+                esCompradaalquilada = True
+
+            End If
+
+        Catch ex As Exception
+
+        Finally
+            If Not IsNothing(OleDbConnection) Then
+                OleDbConnection.Close()
+            End If
+        End Try
+
+        Return esCompradaalquilada
+
+    End Function
+
+    Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles btnCesta.Click
+
+        Response.Redirect("frmCesta.aspx")
+
     End Sub
 End Class
