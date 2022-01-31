@@ -117,7 +117,6 @@ Public Class frmPeliculas
                         _OleDbConnection.Open()
                         precioPeli = cmd.ExecuteScalar
 
-
                     Catch ex As Exception
 
                     Finally
@@ -126,8 +125,7 @@ Public Class frmPeliculas
                         End If
                     End Try
 
-
-                    sql = "SELECT COUNT(*) FROM [Facturas];"
+                    sql = "SELECT MAX(FacturaId) FROM [Facturas];"
 
                     cmd = New OleDbCommand(sql, _OleDbConnection)
 
@@ -165,74 +163,82 @@ Public Class frmPeliculas
             Dim nombrePelicula As String = GridView1.Rows(selectdIndex).Cells(2).Text
             Dim peliculaIdString As String = peliculaId.ToString()
 
-            Dim contadorFacturas As Integer = 0
+            If ComprobarPeliCompradaAlqilada(peliculaId) = True Then
 
-            Dim repe As Boolean = False
-
-            If Not IsNothing(HttpContext.Current.Session("Reto2Carrito")) Then
-                ' recuperar la cesta desde sesión
-                cesta = HttpContext.Current.Session("Reto2Carrito")
-            End If
-
-            For i = 0 To cesta.Count - 1
-
-                If cesta(i).peliculaId = peliculaId Then
-
-                    repe = True
-
-                End If
-
-            Next
-
-            If repe = True Then
-
-                MsgBox("Pelicula ya comprada o alquilada")
+                MsgBox("Peli ya comprada o alquilada")
 
             Else
 
-                Dim sql As String = "SELECT [Precio] FROM [Peliculas] WHERE [PeliculaId] LIKE '" + peliculaIdString + "';"
+                Dim contadorFacturas As Integer = 0
 
-                Dim cmd As OleDbCommand = New OleDbCommand(sql, _OleDbConnection)
+                Dim repe As Boolean = False
 
-                Try
-                    _OleDbConnection.Open()
-                    precioPeli = cmd.ExecuteScalar
+                If Not IsNothing(HttpContext.Current.Session("Reto2Carrito")) Then
+                    ' recuperar la cesta desde sesión
+                    cesta = HttpContext.Current.Session("Reto2Carrito")
+                End If
 
+                For i = 0 To cesta.Count - 1
 
-                Catch ex As Exception
+                    If cesta(i).peliculaId = peliculaId Then
 
-                Finally
-                    If Not IsNothing(OleDbConnection) Then
-                        OleDbConnection.Close()
+                        repe = True
+
                     End If
-                End Try
+
+                Next
+
+                If repe = True Then
+
+                    MsgBox("Pelicula ya comprada o alquilada")
+
+                Else
+
+                    Dim sql As String = "SELECT [Precio] FROM [Peliculas] WHERE [PeliculaId] LIKE '" + peliculaIdString + "';"
+
+                    Dim cmd As OleDbCommand = New OleDbCommand(sql, _OleDbConnection)
+
+                    Try
+                        _OleDbConnection.Open()
+                        precioPeli = cmd.ExecuteScalar
 
 
-                sql = "SELECT COUNT(*) FROM [Facturas];"
+                    Catch ex As Exception
 
-                cmd = New OleDbCommand(sql, _OleDbConnection)
+                    Finally
+                        If Not IsNothing(OleDbConnection) Then
+                            OleDbConnection.Close()
+                        End If
+                    End Try
 
-                Try
-                    _OleDbConnection.Open()
-                    contadorFacturas = cmd.ExecuteScalar
+
+                    sql = "SELECT MAX(FacturaId) FROM [Facturas];"
+
+                    cmd = New OleDbCommand(sql, _OleDbConnection)
+
+                    Try
+                        _OleDbConnection.Open()
+                        contadorFacturas = cmd.ExecuteScalar
 
 
-                Catch ex As Exception
+                    Catch ex As Exception
 
-                Finally
-                    If Not IsNothing(OleDbConnection) Then
-                        OleDbConnection.Close()
-                    End If
-                End Try
+                    Finally
+                        If Not IsNothing(OleDbConnection) Then
+                            OleDbConnection.Close()
+                        End If
+                    End Try
 
-                contadorFacturas = contadorFacturas + 1
+                    contadorFacturas = contadorFacturas + 1
 
-                Dim newLinea As New lineaFac(contadorFacturas, cesta.Count + 1, peliculaId, precioPeli, 0, True, nombrePelicula)
+                    Dim newLinea As New lineaFac(contadorFacturas, cesta.Count + 1, peliculaId, precioPeli, 0, True, nombrePelicula)
 
-                cesta.Add(newLinea)
-                HttpContext.Current.Session("Reto2Carrito") = cesta
+                    cesta.Add(newLinea)
+                    HttpContext.Current.Session("Reto2Carrito") = cesta
 
-                contadorDicctionary = +1
+                    contadorDicctionary = +1
+
+                End If
 
             End If
 
