@@ -1,16 +1,9 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="frmPeliculasEdit.aspx.vb" Inherits="RetoDI_SGE.frmPeliculasEdit" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="frmPeliculasEdit.aspx.vb" Inherits="RetoDI_SGE.frmPeliculasEdit"  MasterPageFile="~/WebApp.Master"%>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
+<asp:Content ID="formEdit" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
         <div>
-            <asp:Label ID="LabelTitulo" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="TITULO"></asp:Label>
+            <asp:Label ID="lblTitulo" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="TITULO"></asp:Label>
             <br />
             <asp:Label ID="lblCodigoPeli" runat="server" Visible="False"></asp:Label>
         </div>
@@ -32,6 +25,5 @@
             </SelectParameters>
         </asp:SqlDataSource>
         <asp:Button ID="Button1" runat="server" Text="Volver" />
-    </form>
-</body>
-</html>
+</form>
+</asp:Content>

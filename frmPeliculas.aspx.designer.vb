@@ -95,11 +95,11 @@ Partial Public Class frmPeliculas
     Protected WithEvents SqlDataSource3 As Global.System.Web.UI.WebControls.SqlDataSource
 
     '''<summary>
-    '''Control Button1.
+    '''Control btnCesta.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnCesta As Global.System.Web.UI.WebControls.Button
 End Class

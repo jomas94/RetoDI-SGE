@@ -5,6 +5,8 @@
 
         lblCodigoPeli.Text = HttpContext.Current.Session("idPeliEdit")
 
+        lblTitulo.Text = HttpContext.Current.Session("nombrePeli")
+
     End Sub
 
     Protected Sub SqlDataSource1_Selecting(sender As Object, e As SqlDataSourceSelectingEventArgs) Handles SqlDataSource1.Selecting
