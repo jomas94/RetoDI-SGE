@@ -77,7 +77,7 @@ Public Class frmPeliculas
 
             Dim peliculaId As Integer = CInt(GridView1.DataKeys(selectdIndex).Item("PeliculaId"))
             'Dim nombrePeliculaIndex As Integer = CInt(GridView1.DataKeys.Item("Titulo"))
-            Dim nombrePelicula As String = GridView1.Rows(selectdIndex).Cells(1).Text
+            Dim nombrePelicula As String = GridView1.Rows(selectdIndex).Cells(2).Text
             Dim repe As Boolean = False
 
             If Not IsNothing(HttpContext.Current.Session("Reto2Carrito")) Then
@@ -154,7 +154,7 @@ Public Class frmPeliculas
         ElseIf nombreComando = "btnComprar" Then
 
             Dim peliculaId As Integer = CInt(GridView1.DataKeys(selectdIndex).Item("PeliculaId"))
-            Dim nombrePelicula As String = GridView1.Rows(selectdIndex).Cells(1).Text
+            Dim nombrePelicula As String = GridView1.Rows(selectdIndex).Cells(2).Text
             Dim peliculaIdString As String = peliculaId.ToString()
 
             Dim contadorFacturas As Integer = 0
