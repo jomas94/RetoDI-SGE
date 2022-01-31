@@ -35,7 +35,6 @@ Public Class frmCesta
     Private Sub verificarCarritoVacio()
 
         Dim cesta As List(Of lineaFac) = New List(Of lineaFac)
-        'If Not IsNothing(HttpContext.Current.Session("Reto2Carrito")) Then
         cesta = HttpContext.Current.Session("Reto2Carrito")
         If IsNothing(cesta) Then
 

@@ -4,6 +4,8 @@
 img#MainContent_imagenPrincipal {
     width: 350px;
     height: 350px;
+    display: block;
+    margin: 0 auto;
 }
 
 article p{
@@ -12,6 +14,7 @@ article p{
 
 .row {
     margin-bottom: 8px;
+    height: 289px;
 }
 
 body {

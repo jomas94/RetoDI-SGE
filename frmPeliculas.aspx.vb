@@ -119,7 +119,7 @@ Public Class frmPeliculas
                         OleDbConnection.Close()
                     End If
                 End Try
-
+6
 
                 sql = "SELECT MAX(FacturaId) FROM [Facturas];"
 
