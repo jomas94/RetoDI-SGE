@@ -7,15 +7,17 @@
 <asp:Content ID="formCesta" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
 
-
-    
         <div>
             <h3>Carrito de compra</h3>
 
-            <%--<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>--%>
             
             <div class="row">
                 <div class="col-lg-8">
+
+                    
+                    <asp:Label ID="Label1" runat="server" Text="Label" Visible="False">CARRITO VACIO</asp:Label>
+
+
                     <asp:GridView ID="gvCarrito" CssClass="table " AutoGenerateColumns="False" runat="server">
                         <Columns>
                            <%-- <asp:BoundField DataField="CodFac" HeaderText="Cod_factura"  />--%>

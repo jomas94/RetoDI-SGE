@@ -1,30 +1,17 @@
 ﻿/**   CSS CREADO PARA NUESTRAS PROPRIAS CLASES*/
 
-/*
-.navbar-inverse {
-    color: red;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: gray;
-    text-align: center;
-    font-size: 30px;
-        border-color: gray;
-    -webkit-box-shadow: 0px 7px 15px 5px rgba(122,122,122,0.8);
-    box-shadow: 0px 5px 10px 5px rgba(122,122,122,0.8);
+
+img#MainContent_imagenPrincipal {
+    width: 350px;
+    height: 350px;
 }
 
-.navbar-inverse .navbar-nav > li > a {
-    color: #a60c0c;
+article p{
+    font-size: 20px;
 }
 
-.navbar-inverse .navbar-brand {
-    color: #a60c0c;
-    font-size: 30px;
-}
-*/
-
-
-.row{
-    margin-bottom:8px;
+.row {
+    margin-bottom: 8px;
 }
 
 body {

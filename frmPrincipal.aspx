@@ -8,23 +8,24 @@
     
 <asp:Content ID="menuPrincipal" ContentPlaceHolderID="MainContent" runat="server">
    <form id="form1" runat="server">
-       <div class="container principal">
-           <asp:Image ImageUrl="~\imagenes\upFlix.png" runat="server" id="imagenPrincipal"/>
+       <div class="row">
+           <div class="col-lg-12">
+
+           
+           <section>
+	            <article>
+		            <h2>RESUMEN</h2>
+		            <p><strong>Lorem ipsum </strong>  dolor sit amet, consectetur adipiscing elit. Nam dapibus vehicula dolor, a commodo nulla cursus sit amet. Nam sollicitudin quam id lorem volutpat mollis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam tincidunt finibus odio, et ultrices odio. Cras tortor massa, dictum vel tortor et, auctor egestas nunc. Cras tristique hendrerit maximus. Suspendisse elementum quam tellus, laoreet luctus massa convallis ut. Etiam in tempor diam. Phasellus in nulla quis felis auctor gravida quis at ligula. Pellentesque imperdiet lectus sit amet metus aliquam, sed lacinia turpis efficitur. Etiam ornare libero quis ultricies sollicitudin. Nullam lacinia, libero quis feugiat sagittis, lacus ex gravida tortor, quis condimentum nulla augue id magna.</p>
+
+                       <asp:Image ImageUrl="~\imagenes\upFlix.png" runat="server" id="imagenPrincipal"/>
+		
+		            <p>Nunc ullamcorper tincidunt lacus, quis maximus augue ultricies eu. Nam convallis lectus consequat, facilisis nisl a, maximus eros. Fusce molestie odio sed sem ultricies, quis lobortis ligula aliquet. Aenean elit purus, molestie sed hendrerit sit amet, tristique in dui. Cras at diam at massa porttitor laoreet. Praesent ut justo fringilla erat maximus fermentum eu at lectus. Mauris fermentum vestibulum ligula, ac condimentum turpis faucibus porttitor. Morbi dapibus fringilla suscipit. Nam sed gravida turpis. Sed quis massa at nulla auctor ultricies vitae a orci. Aenean bibendum arcu sit amet placerat lobortis. Aliquam ac nunc ut urna imperdiet venenatis eu at augue. Duis semper diam a molestie volutpat. Vivamus tempus libero eu est lacinia egestas. Fusce sagittis tortor eu nisl semper maximus.</p>
+		
+	            </article>
+	
+            </section>
+            </div>
        </div>
-        <%--   <asp:Menu ID="Menu1" runat="server" BackColor="#FFFBD6" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#990000" StaticSubMenuIndent="10px">
-                <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
-                <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
-                <DynamicMenuStyle BackColor="#FFFBD6" />
-                <DynamicSelectedStyle BackColor="#FFCC66" />
-                <Items>
-                    <asp:MenuItem Text="Peliculas" Value="Peliculas" NavigateUrl="~/frmPeliculas.aspx"></asp:MenuItem>
-                    <asp:MenuItem Text="Cesta de Compra" Value="Cesta de Compra" NavigateUrl="~/frmCesta.aspx"></asp:MenuItem>
-                    <asp:MenuItem Text="Cambiar Contraseña" Value="Cambiar Contraseña" NavigateUrl="~/frmChangePassword.aspx"></asp:MenuItem>
-                </Items>
-                <StaticHoverStyle BackColor="#990000" ForeColor="White" />
-                <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
-                <StaticSelectedStyle BackColor="#FFCC66" />
-            </asp:Menu>
-           --%>
+
     </form>
 </asp:Content>
