@@ -11,9 +11,9 @@ Public Class WebApiConfig
         config.MapHttpAttributeRoutes()
 
         config.Routes.MapHttpRoute(
-            name := "DefaultApi",
-            routeTemplate := "api/{controller}/{id}",
-            defaults := New With {.id = RouteParameter.Optional}
+            name:="DefaultApi",
+            routeTemplate:="api/{controller}/{id}",
+            defaults:=New With {.id = RouteParameter.Optional}
         )
     End Sub
 End Class
