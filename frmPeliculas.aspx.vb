@@ -37,7 +37,6 @@ Public Class frmPeliculas
     End Sub
 
     Protected Sub GridView1_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles GridView1.RowCommand
-
         Dim cesta As New List(Of lineaFac)
 
         Dim fileName As String
@@ -71,7 +70,8 @@ Public Class frmPeliculas
         If nombreComando = "btnAlquilar" Then
 
             Dim peliculaId As Integer = CInt(GridView1.DataKeys(selectdIndex).Item("PeliculaId"))
-
+            'Dim nombrePeliculaIndex As Integer = CInt(GridView1.DataKeys.Item("Titulo"))
+            Dim nombrePelicula As String = GridView1.Rows(selectdIndex).Cells(1).Text
             Dim repe As Boolean = False
 
             If Not IsNothing(HttpContext.Current.Session("Reto2Carrito")) Then
@@ -134,7 +134,7 @@ Public Class frmPeliculas
 
                 contadorFacturas = contadorFacturas + 1
 
-                Dim newLinea As New lineaFac(contadorFacturas, 1, peliculaId, precioPeli, 0, False)
+                Dim newLinea As New lineaFac(contadorFacturas, cesta.Count + 1, peliculaId, precioPeli, 0, False, nombrePelicula)
 
                 cesta.Add(newLinea)
                 HttpContext.Current.Session("Reto2Carrito") = cesta
@@ -148,7 +148,7 @@ Public Class frmPeliculas
         ElseIf nombreComando = "btnComprar" Then
 
             Dim peliculaId As Integer = CInt(GridView1.DataKeys(selectdIndex).Item("PeliculaId"))
-
+            Dim nombrePelicula As String = GridView1.Rows(selectdIndex).Cells(1).Text
             Dim peliculaIdString As String = peliculaId.ToString()
 
             Dim contadorFacturas As Integer = 0
@@ -213,7 +213,7 @@ Public Class frmPeliculas
 
                 contadorFacturas = contadorFacturas + 1
 
-                Dim newLinea As New lineaFac(contadorFacturas, 1, peliculaId, precioPeli, 0, True)
+                Dim newLinea As New lineaFac(contadorFacturas, cesta.Count + 1, peliculaId, precioPeli, 0, True, nombrePelicula)
 
                 cesta.Add(newLinea)
                 HttpContext.Current.Session("Reto2Carrito") = cesta

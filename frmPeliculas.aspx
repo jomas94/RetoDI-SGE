@@ -22,16 +22,22 @@
                 </SelectParameters>
             </asp:SqlDataSource>
             <br />
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="PeliculaId" DataMember="DefaultView" DataSourceID="SqlDataSource3" Width="630px">
+            <asp:GridView ID="GridView1" CssClass="table"  runat="server" AutoGenerateColumns="False" DataKeyNames="PeliculaId" DataMember="DefaultView" DataSourceID="SqlDataSource3" Width="630px" CellPadding="5" RowStyle-BackColor="#9999FF" RowStyle-VerticalAlign="Middle" RowStyle-HorizontalAlign="Center" HorizontalAlign="NotSet">
                 <Columns>
                     <asp:BoundField DataField="PeliculaId" HeaderText="PeliculaId" SortExpression="PeliculaId" ReadOnly="True" Visible="False" />
                     <asp:BoundField DataField="Titulo" HeaderText="Titulo" SortExpression="Titulo" />
                     <asp:BoundField DataField="Duracion" HeaderText="Duracion" SortExpression="Duracion" />
                     <asp:BoundField DataField="Director" HeaderText="Director" SortExpression="Director" />
                     <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" />
-                    <asp:ButtonField ButtonType="Button" CommandName="btnAlquilar" Text="Alquilar" />
-                    <asp:ButtonField ButtonType="Button" CommandName="btnComprar" Text="Comprar" />
+                    <asp:ButtonField ButtonType="Button" ControlStyle-CssClass=" boton btn btn-default" CommandName="btnAlquilar" Text="Alquilar" >
+<ControlStyle CssClass="btn btn-default"></ControlStyle>
+                    </asp:ButtonField>
+                    <asp:ButtonField ButtonType="Button" ControlStyle-CssClass=" boton btn btn-default"  CommandName="btnComprar" Text="Comprar" >
+<ControlStyle CssClass="btn btn-default"></ControlStyle>
+                    </asp:ButtonField>
                 </Columns>
+
+<RowStyle CssClass="margin: " HorizontalAlign="Center" VerticalAlign="Middle"></RowStyle>
             </asp:GridView>
             <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [PeliculaId], [Titulo], [Duracion], [Director], [Precio] FROM [Peliculas] WHERE ([CodGenero] LIKE (SELECT [GeneroId] From Generos WHERE Nombre LIKE  '%' + ? + '%') AND [Pais]  LIKE  '%' + ? + '%') ">
                 <SelectParameters>
@@ -40,7 +46,7 @@
                 </SelectParameters>
             </asp:SqlDataSource>
             <br />
-            <asp:Button ID="Button1" runat="server" Text="Button" Width="97px" />
+            <asp:Button ID="Button1" runat="server" CssClass="btn btn-default" Text="Button" Width="97px" />
             <br />
         </div>
     </form>

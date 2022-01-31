@@ -4,14 +4,17 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
 body {
   margin: 0;
 }
+
 article,
 aside,
 details,
@@ -1610,6 +1613,7 @@ pre code {
 .row {
   margin-right: -15px;
   margin-left: -15px;
+    width: 1226px;
 }
 .row-no-gutters {
   margin-right: 0;
@@ -1671,6 +1675,9 @@ pre code {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
+    top: 0px;
+    left: 0px;
+    width: 1195px;
 }
 .col-xs-1,
 .col-xs-2,

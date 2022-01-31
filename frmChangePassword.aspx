@@ -7,22 +7,37 @@
 <asp:Content ID="menuUsuario" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
         <div>
-            <asp:Label ID="Label1" runat="server" Text="CAMBIAR CONTRASEÑA"></asp:Label>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>CAMBIAR CONTRASEÑA</h3>
+
+                </div>
+            </div>
             <br />
             <br />
-            <asp:Label ID="Label2" runat="server" Text="introduzca la nueva Contraseña"></asp:Label>
+          
+            <p>Introduzca la nueva Contraseña</p>
+            <div class="row">
+                
+                <div class="col-lg-12">
+                    <asp:TextBox ID="txtNewPassword" CssClass="form-control" runat="server" Width="200px" placeholder="Introduzca la contraseña"></asp:TextBox>
+
+                </div>
+
+            </div>
             <br />
+             <div class="row">
+                
+                <div class="col-lg-12">
+                     
+                    <asp:TextBox ID="txtNewPasswordDupe" CssClass="form-control" runat="server" Width="200px" placeholder="Repita la contraseña"></asp:TextBox>
+
+                </div>
+
+            </div>            
             <br />
-            <asp:TextBox ID="txtNewPassword" runat="server" Width="155px"></asp:TextBox>
-            <br />
-            <br />
-            <asp:Label ID="Label3" runat="server" Text="Vuelva ha Introduzir la nueva Contraseña"></asp:Label>
-            <br />
-            <br />
-            <asp:TextBox ID="txtNewPasswordDupe" runat="server" Width="155px"></asp:TextBox>
-            <br />
-            <br />
-            <asp:Button ID="btnCambiarPass" runat="server" Text="Cambiar Contraseña" />
+            <asp:Button ID="btnCambiarPass" runat="server" CssClass="btn-second" Text="Cambiar Contraseña" />
         </div>
     </form>
 </asp:Content>

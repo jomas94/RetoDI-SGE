@@ -22,9 +22,16 @@
 }
 */
 
+
+.row{
+    margin-bottom:8px;
+}
+
 body {
     background-image: url("../imagenes/bg-01.jpg");
-    color: black !important;
+    /*background-repeat: no-repeat;*/
+    background-size:cover;
+        color: black !important;
 }
 .contenidoPrincipal{
 

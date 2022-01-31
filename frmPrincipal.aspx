@@ -9,7 +9,7 @@
 <asp:Content ID="menuPrincipal" ContentPlaceHolderID="MainContent" runat="server">
    <form id="form1" runat="server">
        <div class="container principal">
-           <asp:Image ImageUrl="~\imagenes\upFlix.png" runat="server" />
+           <asp:Image ImageUrl="~\imagenes\upFlix.png" runat="server" id="imagenPrincipal"/>
        </div>
         <%--   <asp:Menu ID="Menu1" runat="server" BackColor="#FFFBD6" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#990000" StaticSubMenuIndent="10px">
                 <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
